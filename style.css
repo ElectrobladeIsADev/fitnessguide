@@ -1,4 +1,6 @@
-body { font-family: sans-serif; text-align: center; background: #222; color: #eee; }
-video, canvas { max-width: 90%; margin: 10px; }
-#ui { margin: 10px; }
-select, input { margin: 0 5px; padding: 5px; }
+body { margin: 0; font-family: sans-serif; background: #111; color: #eee; overflow: hidden; }
+video, canvas { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; }
+#overlay { position: absolute; top: 10px; left: 10px; z-index: 10; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 10px; }
+#stickCanvas { position: absolute; bottom: 10px; right: 10px; width: 200px; height: 200px; background: rgba(0,0,0,0.5); z-index: 10; }
+label, select, input { margin: 5px 0; display: block; color: #eee; }
+#feedback { margin-top: 10px; color: #f66; }
