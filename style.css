@@ -1,0 +1,4 @@
+body { font-family: sans-serif; text-align: center; background: #222; color: #eee; }
+video, canvas { max-width: 90%; margin: 10px; }
+#ui { margin: 10px; }
+select, input { margin: 0 5px; padding: 5px; }
