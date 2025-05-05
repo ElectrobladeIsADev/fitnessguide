@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Fitness Coach</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.5/pose.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <h1>AI Fitness Coach</h1>
   <video id="video" playsinline></video>
-  <canvas id="output"></canvas>
-  <div id="ui">
-    <select id="exercise">
-      <option value="squat">Squat</option>
-      <option value="pushup">Push-up</option>
-      <option value="shoulder">Shoulder Press</option>
-      <option value="boxing">Boxing</option>
-    </select>
-    <input type="number" id="weight" placeholder="Weight (kg)" />
-    <input type="number" id="targetReps" placeholder="Reps per Set" />
-    <p id="stats">Sets: 0 | Reps: 0 | Calories: 0.00</p>
+  <canvas id="canvas"></canvas>
+  <canvas id="stickCanvas"></canvas>
+  <div id="overlay">
+    <label>Exercise:
+      <select id="exercise">
+        <option value="squat">Squat</option>
+        <option value="pushup">Pushup</option>
+        <option value="shoulder">Shoulder Press</option>
+        <option value="boxing">Boxing</option>
+      </select>
+    </label>
+    <label>Min Angle: <input type="number" id="minAngle" value="70"></label>
+    <label>Max Angle: <input type="number" id="maxAngle" value="160"></label>
+    <label>Weight (kg): <input type="number" id="weight" value="70"></label>
+    <label>Reps per Set: <input type="number" id="targetReps" value="10"></label>
+    <p id="stats">Loading...</p>
     <p id="feedback"></p>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
